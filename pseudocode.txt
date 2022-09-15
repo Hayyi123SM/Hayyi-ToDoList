@@ -1,0 +1,27 @@
+STORE "pilihan" AS STRING WITH ENUM OF "tambah", "ubah", "hapus", "coret"
+STORE "result" AS ARRAY WITH NULL VALUE
+
+IF "pilihan" EQUAL "tambah"
+  STORE "Judul kegiatan" AS STRING WITH ANY VALUE
+  STORE "Rincian kegiatan" AS STRING WITH ANY VALUE
+  STORE "Tanggal kegiatan" AS STRING WITH ANY DATE
+  STROE  "result" WITH "Judul kegiatan", "Rincian kegiatan", "Tanggal kegiatan"
+  DISPLAY "result"
+ELSE IF "pilihan" EQUAL "ubah"
+  STORE "id" WITH "result" WITH INDEX OF SELECT
+  STORE "Judul kegiatan" AS STRING WITH ANY VALUE
+  STORE "Rincian kegiatan" AS STRING WITH ANY VALUE
+  STORE "Tanggal kegiatan" AS STRING WITH ANY DATE
+  STROE  "result" WITH "Judul kegiatan", "Rincian kegiatan", "Tanggal kegiatan" WITH "id" FROM "result"
+  DISPLAY "result"
+ELSE IF "pilihan" EQUAL "hapus"
+  STORE "id" WITH "result" WITH INDEX OF SELECT
+  DELETE "result" WITH "id" FROM "result"
+  DISPLAY "result"
+ELSE IF "pilihan" EQUAL "coret"
+  STORE "id" WITH "result" WITH INDEX OF SELECT
+  CROSS OUT "result" WITH "id" FROM "result"
+  DISPLAY "result"
+ELSE
+  DISPLAY "Pilihan tidak ada!!"
+END IF
