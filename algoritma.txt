@@ -1,0 +1,18 @@
+Algoritma To Do List
+1. Mulai
+2. Masukan pilihan tambah, ubah, hapus, coret
+3. Jika memilih tambah, maka
+4. Masukan judul kegiantan
+5. Masukan rincian kegiatan
+6. Masukan tanggal kegiatan
+7. Simpan masukan
+8. Jika memilih ubah, maka
+9. Lakukan seperti step 4 sampai 7
+10. Jika memilih hapus, maka
+11. Pilih list yang akan di hapus
+12. Tekan tombol hapus
+13. Jika memilih coret, maka 
+14. pilih list yang akan di coret
+15. Tekan tombol checklist 
+16. Jika memilih selai pilihan tersebut, maka proses selesai
+17. Selesai
